@@ -3,37 +3,139 @@
   padding: 0;
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  justify-content: space-between;
+.App-container {
+  background-color: rgb(61, 56, 56);
 }
 
-.bars-img {
+#App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  justify-content: space-around;
+  overflow-x: hidden;
+  transform: rotate(0);
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+}
+
+#App.show-nav {
+  transform: rotate(-20deg);
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+}
+
+.circle-container {
+  height: fit-content;
+  width: fit-content;
+  align-self: flex-start;
+  position: fixed;
+  top: -80px;
+  left: -80px;
+  z-index: 10;
+}
+
+.circle  {
+  background-color: rgb(18, 242, 242);
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+#rotate-circle {
+  transform: rotate(-145deg);
+}
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open-nav-btn {
+  left: 50%;
+}
+
+.circle button#close-nav-btn {
+  top: 30%;
+  left: 50%;
+  transform: rotate(95deg);
+  transform-origin: top left;
+}
+
+.bars-img, .close-nav-img {
   height: 5vh;
   width: 4vw;
+  padding: 1vh;
 }
 
 nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  height: fit-content;
-  width: auto;
-  padding: 2vh;
+  position: fixed;
+  bottom: 5vh;
+  color: white;
+  z-index: 100;
 }
 
-.logo-img {
-  height: 100%;
+#App.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  margin: 3vh 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+  font-size: x-large;
+}
+
+nav ul li img {
+  margin: 0 2vh;
+  transform: translateY(4px);
+  height: 3vh;
+  width: 3vh;
+}
+
+nav ul li + li {
+  margin-left: 20px;
+  transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+  margin-left: 40px;
+  transform: translateX(-200%);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
 }
 
 .MainContent {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  place-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0 3vh;
+  background-color: aliceblue;
+  flex-grow: 1;
 }
 
 .MainContent h1 {
@@ -58,16 +160,4 @@ nav {
 
 .social-icon {
   height: 7vh;
-}
-
-footer {
-  height: fit-content;
-  width: fit-content;
-}
-
-.wave-img {
-  position: relative;
-  top: 0.2vh;
-  height: 100%;
-  width: 100vw;
 }
