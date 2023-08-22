@@ -1,32 +1,42 @@
 import React from "react";
-import {Outlet, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
+import { useIsNavOpen } from './Context';
 
 const RotatingNav = () => {
- return (
-    <nav>
-        <ul>
-            <li className='about-me-link' key='about-me-button'>
-                <Link to='/resume-website-v2/about-me'>
-                    <img src='/house-solid.svg' className="nav-img"/>
-                    About Me
-                </Link>
-            </li>
+    const { isNavOpen, setIsNavOpen } = useIsNavOpen();
 
-            <li className='projects-link' key='projects-button'>
-                <Link to='/resume-website-v2/projects'>
-                    <img src='/star-solid.svg' className="nav-img"/>
-                    Projects
-                </Link>
-            </li>
+    return (
+        <nav>
+            <ul>
+                <li className='home-link' key='home-button'>
+                    <Link to='/' onClick={() => setIsNavOpen(false)}>
+                        <img src='/house-solid.svg' className="nav-img"/>
+                        Home
+                    </Link>
+                </li>
 
-            <li className="resume-link" key='resume-button'>
-                <Link to='/resume-website-v2/resume'>
-                    <img src='/user-solid.svg' className="nav-img"/>
-                    Resume
-                </Link>
-            </li>
-        </ul>
-    </nav>
+                <li className='about-me-link' key='about-me-button'>
+                    <Link to='/about' onClick={() => setIsNavOpen(false)}>
+                        <img src='/question-solid.svg' className="nav-img"/>
+                        About Me
+                    </Link>
+                </li>
+
+                <li className='projects-link' key='projects-button'>
+                    <Link to='/projects' onClick={() => setIsNavOpen(false)}>
+                        <img src='/star-solid.svg' className="nav-img"/>
+                        Projects
+                    </Link>
+                </li>
+
+                <li className="resume-link" key='resume-button'>
+                    <Link to='/resume' onClick={() => setIsNavOpen(false)}>
+                        <img src='/user-solid.svg' className="nav-img"/>
+                        Resume
+                    </Link>
+                </li>
+            </ul>
+        </nav>
  )
 }
 

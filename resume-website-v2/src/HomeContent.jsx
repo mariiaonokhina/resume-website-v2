@@ -1,6 +1,6 @@
 import React from "react";
 
-const MainContent = () => {
+const HomeContent = () => {
     return (
         <div className='MainContent'>
         	<h1>Hey, I am Mariia!</h1>
@@ -16,4 +16,4 @@ const MainContent = () => {
     )
 }
 
-export default MainContent;
+export default HomeContent;
