@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AboutMePage from './AboutMePage';
 import NavigationCircle from './NavigationCircle';
 import ProjectsPage from './ProjectsPage';
-import ResumePage from './ResumePage';
 import { ContextProvider } from './Context';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -18,7 +17,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route index={true} path="/" element={<App />} />
         <Route path='/about' element={<AboutMePage />} />
         <Route path='/projects' element={<ProjectsPage />} />
-        <Route path='/resume' element={<ResumePage />} />
       </Routes>
     </BrowserRouter>
     </ContextProvider>

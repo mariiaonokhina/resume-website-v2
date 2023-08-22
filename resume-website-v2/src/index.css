@@ -165,3 +165,59 @@ nav a {
 .social-icon {
   height: 7vh;
 }
+
+.projects-header {
+  font-size: 72px !important;
+  margin-bottom: 2vh;
+}
+
+.ProjectCard {
+  height: fit-content;
+  min-height: 30vh;
+  width: 70vw;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 3vh;
+  margin-bottom: 3vh;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.project-name {
+  font-size: 36px;
+  margin-bottom: 2vh;
+}
+
+.project-img {
+  width: 50vw;
+  margin-bottom: 2vh;
+}
+
+.project-description {
+  font-size: larger !important;
+  width: 80%;
+  margin-bottom: 2vh;
+}
+
+.project-languages {
+  font-size: smaller !important;
+  margin-bottom: 2vh;
+}
+
+.project-buttons-container {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  height: fit-content;
+  justify-content: space-around;
+}
+
+.project-button {
+  outline: none;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 8vw;
+  height: 4vh;
+  cursor: pointer;
+}

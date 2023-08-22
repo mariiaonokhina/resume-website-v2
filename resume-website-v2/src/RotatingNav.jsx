@@ -30,10 +30,10 @@ const RotatingNav = () => {
                 </li>
 
                 <li className="resume-link" key='resume-button'>
-                    <Link to='/resume' onClick={() => setIsNavOpen(false)}>
+                    <a href='https://drive.google.com/file/d/1HVvyPR7R04oZhc1OBspwrWVA7lucJFM0/view?usp=sharing'>
                         <img src='/user-solid.svg' className="nav-img"/>
                         Resume
-                    </Link>
+                    </a>
                 </li>
             </ul>
         </nav>
